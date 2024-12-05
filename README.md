@@ -58,11 +58,11 @@
       };
 
       // Update the content with the translated text
-      contentElement.textContent = translations[selectedLanguage] || originalText;
+      contentment.textContent = translations[selectedLanguage] || originalText;
     }
 
     // Add event listener to the dropdown
-    languageSelector.addEventListener("change", translateContent);
+    language selector.addEventListener("change", translate content);
   </script>
 </body>
 </html>
