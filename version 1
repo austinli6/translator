@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Translation Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      text-align: center;
+    }
+    select {
+      margin: 10px;
+      padding: 10px;
+    }
+    .content {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Active Translation</h1>
+    <p>Select a language to translate the text:</p>
+    <select id="languageSelector">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="zh-CN">Chinese</option>
+   
+    </select>
+    <div class="content" id="content">
+      Hello! This is a sample text for translation.
+    </div>
+  </div>
+
+  <script>
+    const contentElement = document.getElementById("content");
+    const languageSelector = document.getElementById("languageSelector");
+
+    // Function to handle language changes
+    function translateContent() {
+      const selectedLanguage = languageSelector.value;
+      const originalText = "Hello! This is a sample text for translation.";
+
+      // Google Translate API simulation using a translation object
+      const translations = {
+        "en": "Hello! This is a sample text for translation.",
+        "es": "¡Hola! Este es un texto de muestra para traducción.",
+        "fr": "Bonjour! Ceci est un texte d'exemple pour la traduction.",
+        "de": "Hallo! Dies ist ein Beispieltext zur Übersetzung.",
+        "zh-CN": "你好！这是用于翻译的示例文本。"
+       
+        
+      };
+
+      // Update the content with the translated text
+      contentElement.textContent = translations[selectedLanguage] || originalText;
+    }
+
+    // Add event listener to the dropdown
+    languageSelector.addEventListener("change", translateContent);
+  </script>
+</body>
+</html>
